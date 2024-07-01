@@ -6,4 +6,5 @@ from .models import Guest, Room, Reservation
 class GuestViewSet(viewsets.ModelViewSet):
     queryset = Guest.objects.all()
 
-
+class RoomViewSet(viewsets.ModelViewSet):
+    queryset = Room.objects.all()
