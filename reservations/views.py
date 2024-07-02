@@ -17,3 +17,8 @@ class RoomViewSet(viewsets.ModelViewSet):
 class ReservationViewSet(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()# El conjunto de datos que debe de ser devuelto 
     serializer_class = ReservationSerializer# Especifica el serializador para este viewset.
+
+def index(request):
+    return render(request,'index.html')
+
+    
