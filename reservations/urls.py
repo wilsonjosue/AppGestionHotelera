@@ -9,6 +9,6 @@ router.register(r'rooms', RoomViewSet)
 router.register(r'reservations', ReservationViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),# Incluye todas las rutas generadas por el DefaultRouter
-    path("index", views.index,name="index")
+    path('', views.index,name='index'),
+    path('api/', include(router.urls)),# Incluye todas las rutas generadas por el DefaultRouter
 ]

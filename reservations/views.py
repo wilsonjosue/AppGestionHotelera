@@ -19,6 +19,6 @@ class ReservationViewSet(viewsets.ModelViewSet):
     serializer_class = ReservationSerializer# Especifica el serializador para este viewset.
 
 def index(request):
-    return render(request,"index.html")
+    return render(request,'index.html')
 
     
