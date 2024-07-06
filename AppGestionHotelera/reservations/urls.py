@@ -1,14 +1,12 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import GuestViewSet, RoomViewSet, ReservationViewSet
-from . import views
+from rest_framework import routers
+from. import views
 
-router = DefaultRouter()# Automáticamente maneja la configuración de rutas para los viewsets.
-router.register(r'guests', GuestViewSet)#Registra cada viewset con el router
-router.register(r'rooms', RoomViewSet)
-router.register(r'reservations', ReservationViewSet)
+router = routers.DefaultRouter()
+router.register(r'guests', views.GuestListView, basename='guests')
+router.register(r'rooms', views.RoomListView, basename='rooms')
+router.register(r'reservations', views.ReservationListView, basename='reservations')
 
 urlpatterns = [
-    path('', views.index,name='index'),
-    path('api/', include(router.urls)),# Incluye todas las rutas generadas por el DefaultRouter
+    path('', include(router.urls)),
 ]
