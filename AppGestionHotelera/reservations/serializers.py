@@ -1,18 +1,20 @@
 from rest_framework import serializers
-from .models import Guest, Room, Reservation
+from.models import Guest, Room, Reservation
 
-#Se utilizan para convertir instancias de modelos Django a JSON y viceversa.
 class GuestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Guest
-        fields = '__all__'
+        fields = ['id', 'first_name', 'last_name', 'email']
 
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
-        fields = '__all__'
+        fields = ['id', 'room_number', 'room_type', 'is_available']
 
 class ReservationSerializer(serializers.ModelSerializer):
+    guest = GuestSerializer(read_only=True)
+    room = RoomSerializer(read_only=True)
+
     class Meta:
         model = Reservation
-        fields = '__all__'
+        fields = ['id', 'guest', 'room', 'check_in', 'check_out']
