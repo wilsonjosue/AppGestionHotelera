@@ -25,7 +25,10 @@ INSTALLED_APPS = [
     # APPS PROPIAS
     'corsheaders',
     'rest_framework',
-    'reservations'
+    'reservations',
+    'login',
+    'rest_framework.authtoken',
+    
 
 ]
 
@@ -38,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'hotel_management.urls'
@@ -121,14 +125,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # MODIFICACIONES DEL PROYECTO 
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',  
-        'rest_framework.authentication.SessionAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-}
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}   
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
