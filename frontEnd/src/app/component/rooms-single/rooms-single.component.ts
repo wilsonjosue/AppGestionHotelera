@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-pagina-principal',
+  selector: 'app-rooms-single',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './pagina-principal.component.html',
-  styleUrl: './pagina-principal.component.css'
+  templateUrl: './rooms-single.component.html',
+  styleUrl: './rooms-single.component.css'
 })
-export class PaginaPrincipalComponent {
+export class RoomsSingleComponent {
   constructor(private router: Router) {}
   rooms(): void {
     this.router.navigate(['/rooms']); 
