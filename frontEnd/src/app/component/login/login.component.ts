@@ -29,4 +29,13 @@ export class LoginComponent {
       }
     );
   }
+  rooms(): void {
+    this.router.navigate(['/rooms']); 
+  }
+  home(): void {
+    this.router.navigate(['/paginaPrincipal']); 
+  }
+  descripcion(): void {
+    this.router.navigate(['/roomsSingle']); 
+  }
 }
