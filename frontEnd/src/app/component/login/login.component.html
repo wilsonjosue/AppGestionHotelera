@@ -1,42 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-  <div class="container">
-    <a class="navbar-brand" (click)="home()">Habibi<span>lights</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-      aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-    </button>
-  </div>
-</nav>
+
 <!-- END nav -->
-<div class="hero-wrap" style="background-image: url('images/bg_3.jpg');">
-  <div class="overlay"></div>
+<div class="overlay">
   <div class="container">
     <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
-      <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
         <div class="text">
-          <p class="breadcrumbs mb-2"><span class="mr-2"><a>Home</a></span> <span>Login</span>
+          <p class="breadcrumbs mb-2"><span class="mr-2"><a>Home</a></span>login<span></span>
           </p>
-          <h1 class="mb-4 bread">Login</h1>
-        </div>
+        <!--  <h1 class="mb-4 bread">Login</h1>-->
       </div>
     </div>
   </div>
 </div>
 
-<div class="login-container">
-    <h2>Login</h2>
-    <form (submit)="login()">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" [(ngModel)]="username" name="username" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required>
-      </div>
-      <button type="submit" class="btn-login">Login</button>
-      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-    </form>
-      <div>
-        <button type="submit" class="btn-login" (click)="home()">No iniciar secion</button>
-      </div>
+<div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
+
+  <div class="login-container">
+      <h2>Login</h2>
+      <form (submit)="login()">
+       <div class="form-group">
+         <label for="username">Username:</label>
+         <input type="text" id="username" [(ngModel)]="username" name="username" required>
+       </div>
+       <div class="form-group">
+         <label for="password">Password:</label>
+         <input type="password" id="password" [(ngModel)]="password" name="password" required>
+        </div>
+        <button type="submit" class="btn-login">Login</button>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      </form>
+    <div>
+      <button type="submit" class="btn-login" (click)="home()">No iniciar secion</button>
+    </div>
   </div>
+</div>
