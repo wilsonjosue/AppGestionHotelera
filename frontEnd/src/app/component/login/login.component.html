@@ -1,35 +1,24 @@
 
-<!-- END nav -->
-<div class="overlay">
-  <div class="container">
-    <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
-        <div class="text">
-          <p class="breadcrumbs mb-2"><span class="mr-2"><a>Home</a></span>login<span></span>
-          </p>
-        <!--  <h1 class="mb-4 bread">Login</h1>-->
+  <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
+
+    <div class="login-container">
+        <h2>LOGIN</h2>
+        <form (submit)="login()">
+          <div class="form-group">
+            <label for="username">USUARIO:</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">CONTRASEÑA:</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required>
+          </div>
+          <button type="submit" class="btn-login">LOGIN</button>
+          <hr>
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </form>
+      <div>
+        <button type="submit" class="btn-login" (click)="home()">No iniciar secion</button>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
-
-  <div class="login-container">
-      <h2>Login</h2>
-      <form (submit)="login()">
-       <div class="form-group">
-         <label for="username">Username:</label>
-         <input type="text" id="username" [(ngModel)]="username" name="username" required>
-       </div>
-       <div class="form-group">
-         <label for="password">Password:</label>
-         <input type="password" id="password" [(ngModel)]="password" name="password" required>
-        </div>
-        <button type="submit" class="btn-login">Login</button>
-        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-      </form>
-    <div>
-      <button type="submit" class="btn-login" (click)="home()">No iniciar secion</button>
     </div>
-  </div>
-</div>
+
