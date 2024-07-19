@@ -1,14 +1,16 @@
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule, RouterOutlet],
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
@@ -28,14 +30,5 @@ export class LoginComponent {
         this.errorMessage = 'Invalid username or password';
       }
     );
-  }
-  rooms(): void {
-    this.router.navigate(['/rooms']); 
-  }
-  home(): void {
-    this.router.navigate(['/paginaPrincipal']); 
-  }
-  descripcion(): void {
-    this.router.navigate(['/roomsSingle']); 
   }
 }

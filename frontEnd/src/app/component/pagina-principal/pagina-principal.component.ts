@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterModule,RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-principal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule,RouterOutlet],
   templateUrl: './pagina-principal.component.html',
   styleUrl: './pagina-principal.component.css'
 })
