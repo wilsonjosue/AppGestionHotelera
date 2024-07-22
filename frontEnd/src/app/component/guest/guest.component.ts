@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+// src/app/components/guest/guest.component.ts
+import { Component, OnInit } from '@angular/core';
 import { GuestService } from '../../services/guest/guest.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,26 +9,25 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './guest.component.html',
-  styleUrl: './guest.component.css'
+  styleUrls: ['./guest.component.css']
 })
-
-export class GuestsComponent implements OnInit {
+export class GuestComponent implements OnInit {
   guests: any[] = [];
   guest: any = {};
 
   constructor(private guestService: GuestService) {}
 
   ngOnInit(): void {
-    this.guests = [];
+    this.getGuests();
   }
 
   getGuests(): void {
     this.guestService.getGuests().subscribe(
-      guests => {
+      (guests) => {
         this.guests = guests;
         console.log('Guests:', this.guests);
       },
-      error => {
+      (error) => {
         console.error('Error fetching guests:', error);
       }
     );
@@ -53,7 +52,7 @@ export class GuestsComponent implements OnInit {
         console.log('Guest deleted successfully');
         this.getGuests();
       },
-      error => {
+      (error) => {
         console.error('Error deleting guest:', error);
       }
     );

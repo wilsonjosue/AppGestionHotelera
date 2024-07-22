@@ -1,3 +1,4 @@
+// src/app/components/login/login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
@@ -21,21 +22,21 @@ export class LoginComponent {
   login(): void {
     this.authService.login(this.username, this.password).subscribe(
       response => {
-        this.router.navigate(['/paginaPrincipal']); 
-        console.log('Login exitoso');
-      },
-      error => {
-        this.errorMessage = 'Invalid username or password';
-      }
+          this.router.navigate(['/home']);
+          console.log('Login exitoso', response);
+        }
     );
   }
   rooms(): void {
     this.router.navigate(['/rooms']); 
   }
   home(): void {
-    this.router.navigate(['/paginaPrincipal']); 
+    this.router.navigate(['/home']); 
   }
   descripcion(): void {
-    this.router.navigate(['/roomsSingle']); 
+    this.router.navigate(['/rooms-single']); 
+  }
+  register(): void {
+    this.router.navigate(['/register']); 
   }
 }

@@ -1,15 +1,17 @@
+#hotel_management/settings.py
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'django-insecure-ck##dd&mab6hpl6%d@f@wwv_&(@v0q4cces4s88z#riroo1tee'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # 
 
 
 # Application definition
@@ -28,8 +30,9 @@ INSTALLED_APPS = [
     'reservations',
     'login',
     'rest_framework.authtoken',
-    
-
+    'rest_framework_simplejwt',
+    'accounts',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -41,7 +44,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
 
 ROOT_URLCONF = 'hotel_management.urls'
@@ -70,8 +72,12 @@ WSGI_APPLICATION = 'hotel_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Hotel_Data',
+        'USER': 'postgres',
+        'PASSWORD': '1218',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -94,9 +100,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#CORS HEADERSto allow
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 # Internationalization
@@ -127,9 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        
     ],
 }   
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200',
-]

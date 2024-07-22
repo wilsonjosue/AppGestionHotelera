@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets
 from .models import Guest, Room, Reservation
 from .serializers import GuestSerializer, RoomSerializer, ReservationSerializer
@@ -17,5 +17,3 @@ class RoomListView(viewsets.ModelViewSet):
 class ReservationListView(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
-
-    
