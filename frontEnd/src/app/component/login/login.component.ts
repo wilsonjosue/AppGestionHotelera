@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 // src/app/components/login/login.component.ts
+=======
+
+>>>>>>> a5a3adcf47818bd4a80ec47966f3818d51039d65
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule, RouterOutlet],
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
@@ -27,6 +32,7 @@ export class LoginComponent {
         }
     );
   }
+<<<<<<< HEAD
   rooms(): void {
     this.router.navigate(['/rooms']); 
   }
@@ -40,3 +46,6 @@ export class LoginComponent {
     this.router.navigate(['/register']); 
   }
 }
+=======
+}
+>>>>>>> a5a3adcf47818bd4a80ec47966f3818d51039d65

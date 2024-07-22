@@ -2,11 +2,20 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-pagina-principal',
   standalone: true,
   imports: [CommonModule, FormsModule],
+=======
+import { RouterModule,RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-pagina-principal',
+  standalone: true,
+  imports: [CommonModule,RouterModule,RouterOutlet],
+>>>>>>> a5a3adcf47818bd4a80ec47966f3818d51039d65
   templateUrl: './pagina-principal.component.html',
   styleUrl: './pagina-principal.component.css'
 })
