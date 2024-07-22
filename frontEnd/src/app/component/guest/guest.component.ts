@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './guest.component.html',
-  styleUrls: ['./guest.component.css']
+  styleUrls: []
 })
 export class GuestComponent implements OnInit {
   guests: any[] = [];

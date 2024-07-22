@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // src/app/components/login/login.component.ts
-=======
-
->>>>>>> a5a3adcf47818bd4a80ec47966f3818d51039d65
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
@@ -32,7 +28,6 @@ export class LoginComponent {
         }
     );
   }
-<<<<<<< HEAD
   rooms(): void {
     this.router.navigate(['/rooms']); 
   }
@@ -46,6 +41,3 @@ export class LoginComponent {
     this.router.navigate(['/register']); 
   }
 }
-=======
-}
->>>>>>> a5a3adcf47818bd4a80ec47966f3818d51039d65
